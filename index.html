@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="meta.title">Royal Chess Club — Learn chess interactively</title>
+  <meta name="description" content="Free interactive chess course: guided lessons on a real board, hand-checked tactics puzzles, and a play-vs-bot mode with three strengths.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>♞</text></svg>">
+</head>
+<body>
+  <header class="topbar">
+    <button class="brand" data-nav="home"><span class="brand-mark">♞</span> <span data-i18n="brand">Royal Chess Club</span></button>
+    <div class="topbar-right">
+      <button id="navToggle" aria-label="Toggle menu" data-i18n-label="nav.menu">☰</button>
+      <nav id="nav">
+        <button class="nav-btn active" data-nav="home" data-i18n="nav.home">Home</button>
+        <button class="nav-btn" data-nav="course" data-i18n="nav.lessons">Lessons</button>
+        <button class="nav-btn" data-nav="puzzles" data-i18n="nav.puzzles">Puzzles</button>
+        <button class="nav-btn" data-nav="play" data-i18n="nav.play">Play</button>
+      </nav>
+      <div class="lang-switch" role="group" aria-label="Language" data-i18n-label="lang.group">
+        <button data-lang="en" aria-label="English">EN</button>
+        <button data-lang="ar" aria-label="العربية">ع</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============================================================ HOME -->
+    <section id="view-home">
+      <div class="hero">
+        <div class="hero-text">
+          <p class="eyebrow" data-i18n="hero.eyebrow">Free · no sign-up · runs in your browser</p>
+          <h1><span data-i18n="hero.h1a">Learn chess by </span><em data-i18n="hero.h1b">playing the moves yourself.</em></h1>
+          <p class="lede" data-i18n="hero.lede">Five guided lessons on a real board, sixteen hand-checked tactics puzzles — including forced mate-in-two lines — and a bot you can beat. Your progress saves automatically.</p>
+          <div class="btn-row">
+            <button class="btn primary" data-nav="course" data-i18n="hero.cta1">Start the course →</button>
+            <button class="btn ghost" data-nav="puzzles" data-i18n="hero.cta2">Try a puzzle</button>
+          </div>
+        </div>
+        <div class="hero-board">
+          <div id="artBoard"></div>
+          <p class="board-caption" data-i18n="hero.caption">Every position on this site is fully playable — click a piece, then a square.</p>
+        </div>
+      </div>
+
+      <div id="homeStats" class="stats"></div>
+
+      <h2 class="section-title" data-i18n="home.title">Everything you need to improve</h2>
+      <div id="featureGrid" class="grid"></div>
+    </section>
+
+    <!-- =========================================================== COURSE -->
+    <section id="view-course" hidden>
+      <p class="eyebrow" data-i18n="course.eyebrow">📚 The course</p>
+      <h2 data-i18n="course.title">Guided lessons</h2>
+      <p class="lede" data-i18n="course.lede">Each lesson mixes short explanations, tasks you solve on the board, and quick quizzes. You can leave anytime — your step is remembered.</p>
+      <div id="lessonGrid" class="grid"></div>
+      <div class="btn-row center">
+        <button class="btn ghost" data-nav="puzzles" data-i18n="course.cta">Ready for puzzles? →</button>
+      </div>
+    </section>
+
+    <!-- =========================================================== LESSON -->
+    <section id="view-lesson" hidden class="split">
+      <div class="board-col">
+        <div id="boardLesson"></div>
+        <div id="lessonBoardMeta" class="board-meta"></div>
+      </div>
+      <aside class="panel">
+        <div class="step-head">
+          <span id="stepCount" class="muted"></span>
+          <div id="stepDots" class="dots"></div>
+        </div>
+        <div id="lessonPanel"></div>
+      </aside>
+    </section>
+
+    <!-- ========================================================== PUZZLES -->
+    <section id="view-puzzles" hidden class="split">
+      <div class="board-col">
+        <div id="boardPuzzle"></div>
+        <div id="puzzleMeta" class="board-meta"></div>
+      </div>
+      <aside class="panel">
+        <div id="puzzlePanel"></div>
+      </aside>
+    </section>
+
+    <!-- ============================================================= PLAY -->
+    <section id="view-play" hidden class="split">
+      <div class="board-col">
+        <div id="boardPlay"></div>
+        <div id="playMeta" class="board-meta"></div>
+      </div>
+      <aside class="panel">
+        <div id="playPanel"></div>
+      </aside>
+    </section>
+  </main>
+
+  <footer>
+    <p data-i18n="footer.text">Royal Chess Club — a dependency-free interactive chess course. Rules engine, lessons and bot all hand-written in vanilla JavaScript.</p>
+  </footer>
+
+  <script src="js/chess.js"></script>
+  <script src="js/content.js"></script>
+  <script src="js/content-ar.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/board.js"></script>
+  <script src="js/bot.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
